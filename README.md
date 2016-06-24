@@ -1,9 +1,9 @@
 
 Todo task list app based on the MEAN (MongoDB, ExpressJS, AngularJS, NodeJS) stack
-You can add todo tasks to the list and when cursor hover on 'del' button,
-it display the message created date-time. Click the button to delete the message.
+You can add todo tasks to the list. When the cursor hovers on the 'del' button,
+it displays the message created date-time. Click the button to delete the message.
 
-Why is this 'todo task app' when million apps/web sites alresy available.
+Why is this 'todo task app' when million apps/web sites already available.
 This app can be used as a reference to develop many similar mean-stack apps,
 that may save some time.
 
