@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="todolist">
+<head>
+    <title>Todo list App</title>
+
+    <!-- Add JQuery, Bootstrap js, css, AngularJS, D3plus-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="http://www.d3plus.org/js/d3.js"></script>
+    <script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+    <!-- client side controller and services -->
+    <script src="./main.js"></script>
+
+</head>
+<body ng-controller="TodoController">
+    <!-- App HTML -->
+    <div class="container">
+        <h1 class="text-primary">Todo:</h1>
+
+        <!-- Items from db -->
+        <div class="row">
+            <div ng-repeat="item in vm.list track by item._id" style="padding:10px">
+                <button class="btn btn-warning" title="Click to delete item created:{{item.date}}" ng-click="vm.removeItem(item)">del</button>
+                {{item.details}}
+            </div>
+        </div>
+
+        <!-- New Item row -->
+        <div class="row">
+            <form role="form">
+                <div class="form-group">
+                    <label for="newItemDetails">Add new item:</label>
+                    <input type="text" class="form-control" 
+                           placeholder="Details of new todo item" 
+                           ng-model="vm.newItemDetails">
+                </div>
+                <button type="submit" class="btn btn-primary" 
+                        ng-click="vm.addItem()" 
+                        ng-disabled="!vm.newItemDetails">Add</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
